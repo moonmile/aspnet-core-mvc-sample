@@ -1,0 +1,11 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> UserManager
+@{
+    ViewData["Title"] = "User Check";
+}
+
+<h2>User Check</h2>
+<div>Login: @User.Identity?.IsAuthenticated</div>
+<div>Username: @User.Identity?.Name</div>
+<div>Role in Administrators: @User.IsInRole("Administrators")</div>
+<div>Users in Users: @User.IsInRole("Users")</div>
